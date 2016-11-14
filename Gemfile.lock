@@ -49,7 +49,6 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    ffi (1.9.14-x86-mingw32)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -80,7 +79,7 @@ GEM
       rake
     postmark-rails (0.14.0)
       actionmailer (>= 3.0.0)
-      postmark (~> 1.9.0)=
+      postmark (~> 1.9.0)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -136,36 +135,19 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-<<<<<<< HEAD
-    sqlite3 (1.3.12)
-    sqlite3 (1.3.12-x86-mingw32)
-=======
->>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2016.9)
-      tzinfo (>= 1.0.0)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
-<<<<<<< HEAD
-    wdm (0.1.1)
-    web-console (3.4.0)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      debug_inspector
-      railties (>= 5.0)
-=======
->>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   byebug
@@ -181,11 +163,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   uglifier (>= 1.3.0)
-<<<<<<< HEAD
-  wdm (>= 0.1.0)
-  web-console
-=======
->>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
 
 BUNDLED WITH
    1.12.5
