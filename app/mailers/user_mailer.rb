@@ -3,8 +3,8 @@ class UserMailer < ApplicationMailer
     @auth_token = message.auth_token
 
     mail(
-      :subject => 'Confirm your Message from 2016',
-      :to      => message.email,
+      :subject => message.subject,
+      :to      => message.email_address,
       :from    => 'welcome@messagefrom2016.com',
       :tag     => 'activation-tag',
       :track_opens => 'true'
