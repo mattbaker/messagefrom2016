@@ -1,0 +1,24 @@
+<h1>Message From 2016</h1>
+
+<%= form_for :message, url: message_create_path do |f| %>
+  <p>
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </p>
+ 
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.label :email_address %><br>
+    <%= f.text_field :email_address %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<h2>The midterm elections are in <%= @days_to_election %> days.</h2>
