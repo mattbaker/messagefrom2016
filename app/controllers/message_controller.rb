@@ -6,7 +6,7 @@ class MessageController < ApplicationController
   end
 
   def create
-    @message = Message.new(params['message'])
+    @message = Message.create(params['message'])
 
     redirect_to :action => new
   end
