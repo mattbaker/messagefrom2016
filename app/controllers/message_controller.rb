@@ -2,7 +2,7 @@ class MessageController < ApplicationController
   def new
     @message = Message.new
     
-    @days_to_election = 720
+    @days_to_election = (Date.new(2018,11,6) - Date.today).to_i
   end
 
   def create
