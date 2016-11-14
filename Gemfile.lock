@@ -42,7 +42,6 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     concurrent-ruby (1.0.2)
-    debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
@@ -50,13 +49,11 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
-    jbuilder (2.6.0)
-      activesupport (>= 3.0.0, < 5.1)
-      multi_json (~> 1.2)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (2.0.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -70,12 +67,16 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
-    multi_json (1.12.1)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    nokogiri (1.6.8.1-x86-mingw32)
-      mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
+    postmark (1.9.1)
+      json
+      rake
+    postmark-rails (0.14.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.9.0)=
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -97,6 +98,11 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -126,8 +132,11 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+<<<<<<< HEAD
     sqlite3 (1.3.12)
     sqlite3 (1.3.12-x86-mingw32)
+=======
+>>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -137,12 +146,15 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
+<<<<<<< HEAD
     wdm (0.1.1)
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
       railties (>= 5.0)
+=======
+>>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -153,19 +165,22 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  jbuilder (~> 2.5)
   jquery-rails
-  listen (~> 3.0.5)
+  pg (~> 0.18)
+  postmark-rails (~> 0.14.0)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails_12factor
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   tzinfo-data
   uglifier (>= 1.3.0)
+<<<<<<< HEAD
   wdm (>= 0.1.0)
   web-console
+=======
+>>>>>>> 36e73ff1b69c3783f11dbef04c4003bb6101f48a
 
 BUNDLED WITH
    1.12.5
