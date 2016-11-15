@@ -29,7 +29,7 @@ class MessageController < ApplicationController
     else
       flash[:error] = "Unable to confirm your email address. Please contact support at messagefrom2016.com"
       logger.error("Bad authorization token received: #{params[:token]}")
-      redirect_to "/"
+      redirect_to root_path
     end
   end
 
