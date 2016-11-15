@@ -28,6 +28,9 @@ the midterms.</p>
   <p>
     <%= f.text_area :content %>
   </p>
+  <button id="save">save</button>
+
+  <h1>the midterm elections are in <%= @days_to_election %> days.</h1>
 
   <p>
     <%= f.label :email_address %><br>
@@ -39,5 +42,3 @@ the midterms.</p>
     <%= f.submit %>
   </p>
 <% end %>
-
-<h2>The midterm elections are in <%= @days_to_election %> days.</h2>
