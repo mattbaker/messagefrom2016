@@ -21,6 +21,8 @@ the midterms.</p>
 <% end %>
 
 <%= form_for :message, url: message_create_path do |f| %>
+  <button id="start">start</button>
+  
   <p>
     <%= f.label :subject %><br>
     <%= f.text_field :subject %>
@@ -35,6 +37,7 @@ the midterms.</p>
     <%= f.label :email_address %><br>
     <%= f.text_field :email_address %>
   </p>
+
 
   <p>
     <%= f.submit %>

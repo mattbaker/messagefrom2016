@@ -3,11 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  width: 100%
+  width: 100%;
+  font-size: 14px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+button{
+    font-size: 24px;
 }
 
 #content-wrapper{
   margin: 0 auto;
   width: 400px;
 }
-
