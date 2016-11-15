@@ -12,7 +12,7 @@ body{
 }
 
 h1{
-    font-size: 48px;
+    font-size: 46px;
 }
 
 input, textarea{
@@ -28,6 +28,7 @@ button, .button{
   border-radius: $border-radius;
   background-color: white;
   width: 125px;
+  margin-left: 150px;
 }
 
 #content-wrapper{
