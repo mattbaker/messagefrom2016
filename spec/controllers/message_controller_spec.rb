@@ -23,7 +23,7 @@ describe MessageController do
         expect(response).to redirect_to(root_path)
       end
 
-      it "send an email" do
+      it "sends an email" do
         confirmation = double("something to return")
         test_message = double("message", save: true)
         expect(Message).to receive(:new).and_return(test_message)
