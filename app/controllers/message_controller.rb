@@ -25,7 +25,7 @@ class MessageController < ApplicationController
       @message.save
     else
       logger.error("Bad authorization token received: #{params[:token]}")
-      redirect_to "/"
+      redirect_to root_path
     end
   end
 
