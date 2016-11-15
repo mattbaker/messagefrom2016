@@ -10,6 +10,7 @@ class MessageController < ApplicationController
 
     if @message.save
       UserMailer.confirm(@message).deliver_now
+      flash[:notice] = "Message successfully created"
       redirect_to root_path
     else
       @errors = @message.errors.full_messages
@@ -23,7 +24,10 @@ class MessageController < ApplicationController
     if @message
       @message.authorized = true
       @message.save
+      flash[:notice] = "Your email #{@message.email_address} has been confirmed."
+      redirect_to root_path
     else
+      flash[:error] = "Unable to confirm your email address. Please contact support at messagefrom2016.com"
       logger.error("Bad authorization token received: #{params[:token]}")
       redirect_to "/"
     end

@@ -10,7 +10,13 @@ the midterms.</p>
 
 <p>Your message and your information will never be shared with anyone but you.</p>
 
-  
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:error] %>
+  <div><%= flash[:error] %></div>
+<% end  %>
 
 <% if @errors %>
   <ul>
