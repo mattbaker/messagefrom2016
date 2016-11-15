@@ -33,12 +33,11 @@ the midterms.</p>
   <h1>the midterm elections are in <%= @days_to_election %> days.</h1>
 
   <p>
-    <%= f.label :email_address %><br>
-    <%= f.text_field :email_address %>
+    <%= f.text_field :email_address, placeholder: "email" %>
   </p>
 
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "send", class: "button" %>
   </p>
 <% end %>
