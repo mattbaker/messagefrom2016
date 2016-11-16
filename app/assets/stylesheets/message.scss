@@ -20,9 +20,26 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h1{
-    font-size: 46px;
-    margin-bottom: 16px;
+h1 {
+  font-size: 46px;
+  line-height: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 42px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 446px) {
+  h1 {
+    text-align: center
+  }
+  h2 {
+    text-align: center
+  }
 }
 
 input, textarea{
@@ -69,10 +86,6 @@ button:hover, .button:hover {
 
 .intro {
   margin-bottom: 60px;
-}
-
-h2 {
-  font-size: 42px;
 }
 
 .sharing {
