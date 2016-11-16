@@ -29,7 +29,7 @@ $(document).ready(function(){
 			};
 			setTimeout(makeMessageBlack, 1500)
 		};
-		if (validateZip === true && validateEmail === true && validateMessage === true) {
+		if (validateZip(zip) === true && validateEmail(email) === true && validateMessage(message) === true) {
 			$.ajax({
 				method: $form.attr('method'),
 				url: $form.attr('action'),
