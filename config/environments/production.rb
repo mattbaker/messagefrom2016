@@ -84,5 +84,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.routes.default_url_options[:host] = 'messagesfrom2016.com'
+  Rails.application.routes.default_url_options[:host] = Rails.application.config.production_domain
 end

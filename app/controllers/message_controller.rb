@@ -25,7 +25,7 @@ class MessageController < ApplicationController
       flash[:notice] = "Your email #{@message.email_address} has been confirmed."
       redirect_to root_path
     else
-      flash[:error] = "Unable to confirm your email address. Please contact support at messagefrom2016.com"
+      flash[:error] = "Unable to confirm your email address. Please contact support@#{Rails.application.config.production_domain}"
       logger.error("Bad authorization token received: #{params[:token]}")
       redirect_to root_path
     end

@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     mail(
       :subject => message.subject,
       :to      => message.email_address,
-      :from    => 'welcome@messagefrom2016.com',
+      :from    => "welcome@#{Rails.application.config.production_domain}",
       :tag     => 'activation-tag',
       :track_opens => 'true'
     )
