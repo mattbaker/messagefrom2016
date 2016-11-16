@@ -25,7 +25,7 @@ describe MessageController do
 
       it "sets a notice that the message was successfully created" do
         post :create, params: { message: {content: "bleep", email_address: "bloop"} }
-        expect(flash[:notice]).to eq "Message successfully created."
+        expect(flash[:notice]).to eq "Your message has been saved!"
       end
 
       it "sends an email" do
