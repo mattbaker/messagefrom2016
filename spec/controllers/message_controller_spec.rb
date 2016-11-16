@@ -89,7 +89,7 @@ describe MessageController do
 
       it "sets a notice after authorization" do
         get :confirm, params: {token: @test_msg.auth_token}
-        expect(flash[:notice]).to eq "Your email #{@test_msg.email_address} has been confirmed."
+        expect(flash[:notice]).to eq "Your email address (#{@test_msg.email_address}) has been confirmed."
       end
     end
 

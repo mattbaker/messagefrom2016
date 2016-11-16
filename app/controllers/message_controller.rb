@@ -22,7 +22,7 @@ class MessageController < ApplicationController
     if @message
       @message.authorized = true
       @message.save
-      flash[:notice] = "Your email #{@message.email_address} has been confirmed."
+      flash[:notice] = "Your email address (#{@message.email_address}) has been confirmed."
       redirect_to root_path
     else
       flash[:error] = "Unable to confirm your email address. Please contact support@#{Rails.application.config.production_host}"
