@@ -34,6 +34,6 @@ class MessageController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:email_address, :content)
+    params.require(:message).permit(:email_address, :content, :zip)
   end
 end
