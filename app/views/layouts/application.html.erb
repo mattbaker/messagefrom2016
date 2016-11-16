@@ -3,19 +3,25 @@
   <head>
     <title>Messagefrom2016</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= image_url("apple-touch-icon.png") %>">
+    <link rel="icon" type="image/png" href="<%= image_url("favicon-32x32.png") %>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%= image_url("favicon-16x16.png") %>" sizes="16x16">
+    <link rel="mask-icon" href="<%= image_url("safari-pinned-tab.svg") %>" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Facebook -->
-    <meta property="og:url"                content="http://<%= Rails.application.config.production_domain %>" />
+    <meta property="og:url"                content="<%= root_url %>"/>
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Message From 2016" />
     <meta property="og:description"        content="Write down your hopes, fears, and feelings about this election and we'll send them back to you two months before the midterms. Hold your future self accountable." />
-    <meta property="og:image"              content="<%= image_path("message-in-a-bottle.488x488.png") %>" />
+    <meta property="og:image"              content="<%= image_url("message-in-a-bottle.488x488.png") %>" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@messagefrom2016" />
     <meta name="twitter:title" content="Message From 2016" />
     <meta name="twitter:description" content="Write down your hopes, fears, and feelings about this election and we'll send them back to you two months before the midterms. Hold your future self accountable." />
-    <meta name="twitter:image" content="<%= image_path("message-in-a-bottle.488x488.png") %>"/>
+    <meta name="twitter:image" content="<%= image_url("message-in-a-bottle.488x488.png") %>"/>
 
     <%= csrf_meta_tags %>
 
