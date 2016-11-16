@@ -23,11 +23,6 @@ gem 'jquery-rails'
 #Postmark (email)
 gem 'postmark-rails', '~> 0.14.0'
 
-#12 factor for Heroku
-group :production do
-  gem 'rails_12factor'
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -44,3 +39,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
