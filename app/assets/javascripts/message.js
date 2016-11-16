@@ -55,7 +55,7 @@ var validateZip = function(zip) {
 	};
 };
 var validateMessage = function(message) {
-	if (message.length < 50) {
+	if ((message.length < 50) || (message.toLowerCase().includes("trump 2020")) || (message.toLowerCase().includes("make america great again"))) {
 		return false;
 	} else {
 		return true;
