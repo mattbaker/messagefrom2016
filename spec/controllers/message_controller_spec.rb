@@ -19,12 +19,12 @@ describe MessageController do
 
     context "when data is valid" do
       it "redirects to root if a message is successfully saved" do
-        post :create, params: { message: {content: "bleep", email_address: "bloop", subject: "AHHHHHHH"} }
+        post :create, params: { message: {content: "bleep", email_address: "bloop"} }
         expect(response).to redirect_to(root_path)
       end
 
       it "sets a notice that the message was successfully created" do
-        post :create, params: { message: {content: "bleep", email_address: "bloop", subject: "AHHHHHHH"} }
+        post :create, params: { message: {content: "bleep", email_address: "bloop"} }
         expect(flash[:notice]).to eq "Message successfully created."
       end
 
@@ -37,18 +37,19 @@ describe MessageController do
           .to receive(:confirm)
           .with(test_message)
           .and_return(confirmation)
-        post :create, params: {message: {content:"some content", email_address: "email@email.email", subject: "some subject"} }
+        post :create, params: {message: {content:"some content", email_address: "email@email.email"} }
       end
 
     end
 
     context "when data is invalid" do
       it "renders the 'new' partial" do
-        post :create, params: {message: {subject: "",content:"",email_address:""} }
+        post :create, params: {message: {content:"", email_address:""} }
         expect(response).to render_template(:new)
       end
+
       it "populates errors" do
-        post :create, params: {message: {subject: "", email_address: "", content: ""}}
+        post :create, params: {message: {email_address: "", content: ""}}
         expect(assigns(:errors)).to_not be_empty
       end
     end
@@ -58,7 +59,6 @@ describe MessageController do
     context "with a valid auth token" do
       before :each do
         @test_msg = Message.create!(
-          subject: "fake subject",
           email_address: "foo@foo.com",
           content: "this is test content"
         )
