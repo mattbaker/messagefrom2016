@@ -7,12 +7,13 @@ $border: 2px solid black;
 
 body{
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
 }
 
 h1{
     font-size: 46px;
+    margin-bottom: 16px;
 }
 
 input, textarea{
@@ -20,6 +21,8 @@ input, textarea{
   border: $border;
   border-radius: $border-radius;
   padding: 10px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 textarea{
@@ -33,7 +36,6 @@ button, .button{
   border-radius: $border-radius;
   background-color: white;
   width: 125px;
-  margin-left: 150px;
   cursor: pointer;
 }
 
@@ -43,6 +45,31 @@ button:hover, .button:hover {
 }
 
 #content-wrapper{
-  margin: 0 auto;
-  width: 460px;
+  margin: 70px auto 0 auto;
+  width: 480px;
+}
+
+.logo {
+  width: 90px;
+}
+
+.center {
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+.sharing {
+  text-align: center;
+}
+
+.social {
+  margin-bottom: 25px;
+  text-align: center;
 }
