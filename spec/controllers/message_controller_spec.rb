@@ -23,6 +23,11 @@ describe MessageController do
         expect(response).to redirect_to(root_path)
       end
 
+      it "sets a notice that the message was successfully created" do
+        post :create, params: { message: {content: "bleep", email_address: "bloop", subject: "AHHHHHHH"} }
+        expect(flash[:notice]).to eq "Message successfully created."
+      end
+
       it "sends an email" do
         confirmation = double("something to return")
         test_message = double("message", save: true)
@@ -73,12 +78,22 @@ describe MessageController do
         get :confirm, params: {token: @test_msg.auth_token}
         expect(assigns(:message)).to be_persisted
       end
+
+      it "sets a notice after authorization" do
+        get :confirm, params: {token: @test_msg.auth_token}
+        expect(flash[:notice]).to eq "Your email #{@test_msg.email_address} has been confirmed."
+      end
     end
 
     context "with an invalid auth token" do
       it "redirects to root" do
         get :confirm, params: {token: "this does not exist"}
         expect(response).to redirect_to(root_path)
+      end
+
+      it "sets an error upon invalid authorization" do
+        get :confirm, params: {token: "this does not exist"}
+        expect(flash[:error]).to eq  "Unable to confirm your email address. Please contact support at messagefrom2016.com"
       end
     end
   end
