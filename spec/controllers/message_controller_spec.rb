@@ -93,7 +93,7 @@ describe MessageController do
 
       it "sets an error upon invalid authorization" do
         get :confirm, params: {token: "this does not exist"}
-        expect(flash[:error]).to eq  "Unable to confirm your email address. Please contact support@www.messagefrom2016.com"
+        expect(flash[:error]).to eq  "Unable to confirm your email address. Please contact support@#{Rails.application.config.production_host}"
       end
     end
   end

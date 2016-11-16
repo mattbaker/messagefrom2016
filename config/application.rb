@@ -21,7 +21,8 @@ module Messagefrom2016
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.production_domain = 'www.messagefrom2016.com'
+    config.production_host = "messagefrom2016.com"
+    config.production_domain = "www.#{config.production_host}"
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => ENV["POSTMARK_API_KEY"] }
   end
