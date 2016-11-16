@@ -7,7 +7,7 @@ class MessageController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      UserMailer.confirm(@message).deliver_now
+      UserMailer.confirm(@message).deliver_later
       flash[:notice] = "Message successfully created."
       redirect_to root_path
     else

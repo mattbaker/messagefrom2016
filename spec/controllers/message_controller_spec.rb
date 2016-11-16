@@ -32,7 +32,7 @@ describe MessageController do
         confirmation = double("something to return")
         test_message = double("message", save: true)
         expect(Message).to receive(:new).and_return(test_message)
-        expect(confirmation).to receive(:deliver_now).and_return(nil)
+        expect(confirmation).to receive(:deliver_later).and_return(nil)
         expect(UserMailer)
           .to receive(:confirm)
           .with(test_message)
