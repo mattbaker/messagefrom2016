@@ -5,9 +5,11 @@ $(document).ready(function(){
 	$("#part2").hide();
 	$("button#start").click(function(){
 		$("#part1").show();
+		scrollToBottom();
 	});
 	$("button#save").click(function(){
 		$("#part2").show();
+		scrollToBottom();
 	});
 	$("#new-message").on("submit", function(event){
 		event.preventDefault();
@@ -68,4 +70,7 @@ var validateMessage = function(message) {
 	} else {
 		return true;
 	};
+};
+var scrollToBottom = function() {
+	window.scrollTo(0,document.body.scrollHeight);
 };
