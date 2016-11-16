@@ -23,9 +23,17 @@ describe MessageController do
         expect(response).to redirect_to(root_path)
       end
 
+      it "creates a full Message" do
+        post :create, params: { message: {content: "bleep", email_address: "bloop", zip: "97212"} }
+        message = Message.last
+        expect(message.content).to eq("bleep")
+        expect(message.email_address).to eq("bloop")
+        expect(message.zip).to eq("97212")
+      end
+
       it "sets a notice that the message was successfully created" do
         post :create, params: { message: {content: "bleep", email_address: "bloop"} }
-        expect(flash[:notice]).to eq "Message successfully created."
+        expect(flash[:notice]).to eq "Your message has been saved!"
       end
 
       it "sends an email" do

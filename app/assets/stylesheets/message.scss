@@ -22,14 +22,16 @@ body {
 
 h1 {
   font-size: 46px;
-  line-height: 48px;
-  margin-bottom: 16px;
-  letter-spacing: -1px;
+  line-height: 52px;
+  margin-bottom: 30px;
 }
 
 h2 {
   font-size: 42px;
   line-height: 42px;
+}
+
+h1, h2 {
   letter-spacing: -1px;
 }
 
@@ -72,7 +74,7 @@ button:hover, .button:hover {
 }
 
 #content-wrapper{
-  margin: 70px auto 0 auto;
+  margin: 35px auto 0 auto;
   max-width: 480px;
   padding:20px;
 }

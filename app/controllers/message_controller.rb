@@ -8,7 +8,7 @@ class MessageController < ApplicationController
 
     if @message.save
       UserMailer.confirm(@message).deliver_later
-      flash[:notice] = "Message successfully created."
+      flash[:notice] = "Your message has been saved!"
       redirect_to root_path
     else
       @errors = @message.errors.full_messages
@@ -34,6 +34,6 @@ class MessageController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:email_address, :content)
+    params.require(:message).permit(:email_address, :content, :zip)
   end
 end
