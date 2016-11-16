@@ -26,7 +26,7 @@ the midterms.</p>
   </ul>
 <% end %>
 
-<%= form_for :message, url: message_create_path do |f| %>
+<%= form_for :message, url: message_create_path, html: { id: 'new-message' } do |f| %>
   <button id="start">start</button>
 
   <h1>how are you feeling?</h1>
@@ -47,6 +47,6 @@ the midterms.</p>
   </p>
 
   <p>
-    <%= f.submit "send", class: "button" %>
+    <%= f.submit "send", class: "button", data: { disable_with: false } %>
   </p>
 <% end %>
