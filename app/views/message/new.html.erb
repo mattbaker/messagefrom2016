@@ -28,25 +28,29 @@
   </ul>
 <% end %>
 
-<%= form_for :message, url: message_create_path do |f| %>
-  <h1>How are you feeling?</h1>
-  <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
-  <p>
-    <%= f.text_area :content, required: true %>
-  </p>
-  <p>
-    <%= f.email_field :email_address, placeholder: "email", required: true %>
-  </p>
+<% if !flash[:notice] %>
+  <%= form_for :message, url: message_create_path do |f| %>
+    <h1>How are you feeling?</h1>
+    <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
+    <p>
+      <%= f.text_area :content, required: true %>
+    </p>
+    <p>
+      <%= f.email_field :email_address, placeholder: "email", required: true %>
+    </p>
 
-  <p>
-    <%= f.text_field :zip, placeholder: "zip (optional)" %>
-  </p>
+    <p>
+      <%= f.text_field :zip, placeholder: "zip (optional)" %>
+    </p>
 
-  <p class="center">
-    <%= f.submit "save", class: "button" %>
-  </p>
+    <p class="center">
+      <%= f.submit "save", class: "button" %>
+    </p>
 
+  <% end %>
 <% end %>
+
+
 
 <h2 class="center">
   The midterm elections<br>
