@@ -1,14 +1,16 @@
-<h1>message from 2016</h1>
+<div class="intro">
+  <h1>Message from 2016</h1>
 
-<p>The election of Donald Trump on November 8th, 2016
-set off a tidal wave of sadness, rage, solidarity, and
-action. But, for better and worse, the human brain is
-great at adapting to terrible situations over time. Write
-down how you’re feeling right now, and we’ll email it to
-your future self in time for you to do something about
-the midterms.</p>
+  <p>The election of Donald Trump on November 8th, 2016
+  set off a tidal wave of sadness, rage, solidarity, and
+  action. But, for better and worse, the human brain is
+  great at adapting to terrible situations over time. Write
+  down how you’re feeling right now, and we’ll email it to
+  your future self in time for you to do something about
+  the midterms.</p>
 
-<p>Your message and your information will never be shared with anyone but you.</p>
+  <p>Your message and your information will never be shared with anyone but you.</p>
+</div>
 
 <% if flash[:notice] %>
   <div><%= flash[:notice] %></div>
@@ -27,26 +29,49 @@ the midterms.</p>
 <% end %>
 
 <%= form_for :message, url: message_create_path do |f| %>
-  <button id="start">start</button>
-
-  <h1>how are you feeling?</h1>
+  <h1>How are you feeling?</h1>
   <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
   <p>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, required: true %>
   </p>
-  <button id="save">save</button>
-
-  <h1>the midterm elections are in <%= days_to_election %> days.</h1>
-
   <p>
-    <%= f.text_field :email_address, placeholder: "email" %>
+    <%= f.email_field :email_address, placeholder: "email", required: true %>
   </p>
 
   <p>
     <%= f.text_field :zip, placeholder: "zip (optional)" %>
   </p>
 
-  <p>
-    <%= f.submit "send", class: "button" %>
+  <p class="center">
+    <%= f.submit "save", class: "button" %>
   </p>
+
 <% end %>
+
+<h2 class="center">
+  The midterm elections<br>
+  are in <%= days_to_election %> days.
+</h2>
+
+<p class="sharing">
+  Get the word out:
+</p>
+
+<div class="social">
+  <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.messagefrom2016.com&layout=button&size=large&mobile_iframe=true&width=84&height=28&appId"
+    width="84"
+    height="28"
+    style="border:none;overflow:hidden"
+    scrolling="no"
+    frameborder="0"
+    allowTransparency="true">
+  </iframe>
+
+  <iframe
+    src="https://platform.twitter.com/widgets/tweet_button.html?size=l&text=Write+a+letter+to+yourself+about+the+election%2C+%40messagefrom2016+will+mail+it+back+to+you+before+midterm+elections.+http%3A%2F%2Fwww.messagefrom2016.com"
+    width="77"
+    height="28"
+    title="Twitter Tweet Button"
+    style="border: 0; overflow: hidden;">
+  </iframe>
+</div>
