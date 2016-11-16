@@ -22,25 +22,27 @@ the midterms.</p>
 
 <%= form_for :message, url: message_create_path, html: { id: 'new-message' } do |f| %>
   <button id="start">start</button>
+  <div id="part1">
+    <h1>how are you feeling?</h1>
+    <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
+    <p>
+      <%= f.text_area :content %>
+    </p>
+    <button id="save">save</button>
+  </div>
+  <div id="part2">
+    <h1>the midterm elections are in <%= @days_to_election %> days.</h1>
 
-  <h1>how are you feeling?</h1>
-  <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
-  <p>
-    <%= f.text_area :content %>
-  </p>
-  <button id="save">save</button>
+    <p>
+      <%= f.text_field :email_address, placeholder: "email" %>
+    </p>
 
-  <h1>the midterm elections are in <%= @days_to_election %> days.</h1>
+    <p>
+      <%= f.text_field :zip, placeholder: "zip (optional)" %>
+    </p>
 
-  <p>
-    <%= f.text_field :email_address, placeholder: "email" %>
-  </p>
-
-  <p>
-    <%= f.text_field :zip, placeholder: "zip (optional)" %>
-  </p>
-
-  <p>
-    <%= f.submit "send", class: "button", data: { disable_with: false } %>
-  </p>
+    <p>
+      <%= f.submit "send", class: "button", data: { disable_with: false } %>
+    </p>
+  </div>
 <% end %>

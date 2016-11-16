@@ -1,6 +1,14 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
+	$("#part1").hide();
+	$("#part2").hide();
+	$("button#start").click(function(){
+		$("#part1").show();
+	});
+	$("button#save").click(function(){
+		$("#part2").show();
+	});
 	$("#new-message").on("submit", function(event){
 		event.preventDefault();
 		var $form = $(this);
