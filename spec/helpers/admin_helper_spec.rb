@@ -11,5 +11,11 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AdminHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe AdminHelper do
+    describe "format floats" do
+      it "rounds floats to two place" do
+        expect(helper.format_floats(3.356)).to eq(3.36)
+      end
+    end
+  end
 end
