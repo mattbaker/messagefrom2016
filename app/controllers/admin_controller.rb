@@ -11,7 +11,11 @@ class AdminController < ApplicationController
     messages = Message.all
 
     total_words = messages.reduce(0) { |sum, message| sum + message.content.split.count }.to_f
-    @average_message_length = total_words / messages.length
+    if messages.length > 0
+      @average_message_length = total_words / messages.length
+    else
+      @average_message_length = 0
+    end
 
     @messages_logged = messages.count
 
