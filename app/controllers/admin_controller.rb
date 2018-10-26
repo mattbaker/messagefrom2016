@@ -18,7 +18,21 @@ class AdminController < ApplicationController
     end
 
     @messages_logged = messages.count
+    @messages_authorized = messages.find_all { |message| message.authorized }.count
+    @messages_sent = messages.find_all { |message| message.sent }.count
 
     @distinct_zips = Message.select(:zip).distinct.length
+  end
+
+  def send_messages
+    unsent_messages = Message.where({sent: false, authorized: true})
+
+    unsent_messages.each do |message|
+      UserMailer.send_message_from_2016(message).deliver_later
+      message.sent = true;
+      message.save
+    end
+
+    @messages_sent = unsent_messages.length
   end
 end
