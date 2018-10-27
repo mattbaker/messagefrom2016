@@ -10,4 +10,16 @@ class UserMailer < ApplicationMailer
       :track_opens => 'true'
     )
   end
+
+  def send_message_from_2016(message)
+    @message = message
+
+    mail(
+      :subject => "Your Message from 2016",
+      :to      => message.email_address,
+      :from    => "welcome@#{Rails.application.config.production_host}",
+      :tag     => '2016to2018',
+      :track_opens => 'true'
+    )
+  end
 end

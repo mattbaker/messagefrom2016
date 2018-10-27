@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
+  post 'admin/send', to: 'admin#send_messages'
 
   get  '/messages/new'
   post '/messages', to: 'message#create', as: 'message_create'
