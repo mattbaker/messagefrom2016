@@ -1,56 +1,59 @@
-  <% if flash[:error] %>
-    <div class="error"><%= flash[:error] %></div>
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="notification"><%= flash[:notice] %></div>
+  <h2 class="center">
+    The midterm elections<br>
+    are in <%= days_to_election %> days.
+  </h2>
+
+  <%= render partial: "social.html.erb" %>
+<% else %>
+  <div class="intro">
+    <h1>Message from 2016</h1>
+
+    <p>The election of Donald Trump on November 8th, 2016
+    set off a tidal wave of sadness, rage, solidarity, and
+    action. But, for better and worse, the human brain is
+    great at adapting to terrible situations over time.<p>
+
+    <p>Write
+    down how you’re feeling right now, and we’ll email it to
+    your future self in time for you to do something about
+    the midterms.</p>
+
+    <p>Your message and your information will never be shared with anyone but you.</p>
+  </div>
+
+  <% if @errors %>
+    <ul id="error-list">
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
   <% end %>
 
-  <% if flash[:notice] %>
-    <div class="notification"><%= flash[:notice] %></div>
-    <h2 class="center">
-      The midterm elections<br>
-      are in <%= days_to_election %> days.
-    </h2>
+  <%= form_for :message, url: message_create_path do |f| %>
+    <h1>How are you feeling?</h1>
+    <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
+    <p>
+      <%= f.text_area :content, required: true %>
+    </p>
+    <p>
+      <%= f.email_field :email_address, placeholder: "email", required: true %>
+    </p>
 
-    <%= render partial: "social.html.erb" %>
-  <% else %>
-    <div class="intro">
-      <h1>Message from 2016</h1>
+    <p>
+      <%= f.text_field :zip, placeholder: "zip (optional)" %>
+    </p>
 
-      <p>The election of Donald Trump on November 8th, 2016
-      set off a tidal wave of sadness, rage, solidarity, and
-      action. But, for better and worse, the human brain is
-      great at adapting to terrible situations over time.<p>
-
-      <p>Write
-      down how you’re feeling right now, and we’ll email it to
-      your future self in time for you to do something about
-      the midterms.</p>
-
-      <p>Your message and your information will never be shared with anyone but you.</p>
-    </div>
-
-    <% if @errors %>
-      <ul id="error-list">
-        <% @errors.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <%= form_for :message, url: message_create_path do |f| %>
-      <h1>How are you feeling?</h1>
-      <p>What are your hopes? What are your fears? What are you willing to do to make sure this never happens again?</p>
-      <p>
-        <%= f.text_area :content, required: true %>
-      </p>
-      <p>
-        <%= f.email_field :email_address, placeholder: "email", required: true %>
-      </p>
-
-      <p>
-        <%= f.text_field :zip, placeholder: "zip (optional)" %>
-      </p>
-
-      <p class="center">
-        <%= f.submit "save", class: "button" %>
-      </p>
-    <% end %>
+    <p class="center">
+      <%= f.submit "save", class: "button" %>
+    </p>
   <% end %>
+  <div class="center bottom-logo">
+    <%= image_tag("message-in-a-bottle.svg", {class: "logo"}) %>
+  </div>
+<% end %>
